@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<PropertyList include="farman-IV-base.xml">
+
+  <sim>
+
+    <description type="string">Farman IV (YASim)</description>
+    <flight-model>yasim</flight-model>
+    <aero>farman-IV-yasim</aero>
+        
+  </sim>
+
+</PropertyList>
