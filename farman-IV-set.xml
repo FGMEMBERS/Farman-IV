@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <PropertyList include="farman-IV-jsbsim-cnf.xml"> -->
+<PropertyList include="farman-IV-yasim-cnf.xml">
+
+  <sim>
+    <description>Farman IV</description>
+    <author>Emmanuel BARANGER (3D/FDM)</author>
+  </sim>
+
+</PropertyList>
+

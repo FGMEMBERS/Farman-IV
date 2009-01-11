@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <airplane mass="680">
 
@@ -92,12 +92,6 @@
            <control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
 </propeller>
 
-<gear x="-3.654" 
-      y="0" 
-      z="-1.050"
-      compression="0.03"> <!-- Arrière -->
-</gear>
-
 <gear x="2.152" 
       y="2.145" 
       z="-1.904"
@@ -110,6 +104,12 @@
       z="-1.904"
       compression="0.01"> <!-- droite -->
       <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+</gear>
+
+<gear x="-3.654" 
+      y="0" 
+      z="-1.050"
+      compression="0.03"> <!-- Arrière -->
 </gear>
 
 <!-- Réservoir -->
