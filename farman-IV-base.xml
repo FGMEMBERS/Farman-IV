@@ -30,10 +30,10 @@
     </gear>
   </controls>
 
-  <nasal>
-    <omi>
-      <file>Aircraft/Farman-IV/Nasal/omi.nas</file>
-    </omi>
-  </nasal>
+  <instrumentation>
+    <marker-beacon>
+      <serviceable type="bool">false</serviceable>
+    </marker-beacon>
+  </instrumentation>
 
 </PropertyList>
