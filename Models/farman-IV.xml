@@ -10,6 +10,7 @@
     <object-name>roueG</object-name>
     <object-name>roueD</object-name>
     <object-name>profondeur</object-name>
+    <object-name>profondeur2</object-name>
     <object-name>profondeur3</object-name>
     <object-name>axeprof</object-name>
     <object-name>ailes</object-name>
@@ -37,8 +38,9 @@
     <object-name>piedD</object-name>
 
     <!-- Objets transparents -->
-    <object-name>profondeur2</object-name>
     <object-name>profondeur4</object-name>
+    <object-name>profondeur5</object-name>
+    <object-name>profondeur6</object-name>
     <object-name>ailes2</object-name>
     <object-name>aileronG2</object-name>
     <object-name>aileronD2</object-name>
@@ -65,6 +67,16 @@
     <object-name>propblur</object-name>
   </animation>
 
+  <!-- Pilote -->
+  <model>
+    <path>Aircraft/Farman-IV/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -2.334 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.098 </z-m>
+    </offsets>
+  </model>
+
   <!-- Bloques de freins parking -->
   <animation>
     <type>select</type>
@@ -78,6 +90,15 @@
   </animation>
 
   <!-- L'hélice --> 
+  <animation>
+    <name>HeliceComplete</name>
+    <object-name>moteur</object-name>
+    <object-name>helice</object-name>
+    <object-name>bol</object-name>
+    <object-name>propdisc</object-name>
+    <object-name>propblur</object-name>
+  </animation>
+
   <!-- Séléction de l'objet visible en fonction des rpm -->
   <animation>
     <type>select</type>
@@ -120,11 +141,7 @@
 
   <animation>
     <type>spin</type>
-    <object-name>moteur</object-name>
-    <object-name>helice</object-name>
-    <object-name>bol</object-name>
-    <object-name>propdisc</object-name>
-    <object-name>propblur</object-name>
+    <object-name>HeliceComplete</object-name>
     <property>engines/engine[0]/rpm</property>
     <factor> 1 </factor>
     <center>
@@ -133,18 +150,23 @@
       <z-m> -0.176 </z-m>
     </center>
     <axis>
-      <x> -1.000 </x>
-      <y>  0.000 </y>
-      <z>  0.000 </z>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
     </axis>
   </animation>
 
   <!-- Gouverne de direction -->
   <animation>
-    <type>rotate</type>
+    <name>DirectionGauche</name>
     <object-name>directionG</object-name>
     <object-name>directionG2</object-name>
     <object-name>cabledirG</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>DirectionGauche</object-name>
     <property>controls/flight/rudder</property>
     <factor>20</factor>
     <center>
@@ -153,9 +175,9 @@
       <z-m>  0.196 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 0.000 </y>
-      <z> 1.000 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
 
@@ -170,9 +192,9 @@
       <z-m> -0.154 </z-m>
     </center>
     <axis>
-      <x> 1.000 </x>
-      <y> 0.000 </y>
-      <z> 0.000 </z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -187,17 +209,22 @@
       <z-m> -0.154 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 0.000 </y>
-      <z> 1.000 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
 
   <animation>
-    <type>rotate</type>
+    <name>DirectionDroite</name>
     <object-name>directionD</object-name>
     <object-name>directionD2</object-name>
     <object-name>cabledirD</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>DirectionDroite</object-name>
     <property>controls/flight/rudder</property>
     <factor>20</factor>
     <center>
@@ -206,9 +233,9 @@
       <z-m> 0.196 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 0.000 </y>
-      <z> 1.000 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
 
@@ -223,9 +250,9 @@
       <z-m> -0.154 </z-m>
     </center>
     <axis>
-      <x> 1.000 </x>
-      <y> 0.000 </y>
-      <z> 0.000 </z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -240,19 +267,24 @@
       <z-m> -0.154 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 0.000 </y>
-      <z> 1.000 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
 
   <!-- Gouverne de profondeur -->
   <animation>
-    <type>rotate</type>
+    <name>Profondeur1</name>
     <object-name>profondeur</object-name>
-    <object-name>profondeur2</object-name>
+    <object-name>profondeur4</object-name>
     <object-name>cableprofA</object-name>
     <object-name>axeprof</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Profondeur1</object-name>
     <property>/controls/flight/elevator</property>
     <factor>11</factor>
     <center>
@@ -261,17 +293,22 @@
       <z-m>  0.349 </z-m>
     </center>
     <axis>
-      <x>  0.000 </x>
-      <y> -1.000 </y>
-      <z>  0.000 </z>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
     </axis>
   </animation>
 
   <animation>
-    <type>rotate</type>
+    <name>Profondeur2</name>
     <object-name>profondeur3</object-name>
-    <object-name>profondeur4</object-name>
+    <object-name>profondeur6</object-name>
     <object-name>cableprof</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Profondeur2</object-name>
     <property>/controls/flight/elevator</property>
     <factor>11</factor>
     <center>
@@ -280,16 +317,21 @@
       <z-m> 1.015 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 1.000 </y>
-      <z> 0.000 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
   <animation>
-    <type>translate</type>
+    <name>LesCables2</name>
     <object-name>cableprofG2</object-name>
     <object-name>cableprofD2</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>LesCables2</object-name>
     <property>/controls/flight/elevator</property>
     <factor>0.0585</factor>
     <center>
@@ -298,16 +340,15 @@
       <z-m>  0.673 </z-m>
     </center>
     <axis>
-      <x> 1.000 </x>
-      <y> 0.000 </y>
-      <z> 0.000 </z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
   <animation>
     <type>translate</type>
-    <object-name>cableprofG2</object-name>
-    <object-name>cableprofD2</object-name>
+    <object-name>LesCables2</object-name>
     <property>/controls/flight/elevator</property>
     <factor>-0.0097</factor>
     <center>
@@ -316,16 +357,15 @@
       <z-m>  0.673 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 0.000 </y>
-      <z> 1.000 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
 
   <animation>
     <type>rotate</type>
-    <object-name>cableprofG2</object-name>
-    <object-name>cableprofD2</object-name>
+    <object-name>LesCables2</object-name>
     <property>/controls/flight/elevator</property>
     <factor>0.35</factor>
     <center>
@@ -334,16 +374,21 @@
       <z-m>  0.673 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 1.000 </y>
-      <z> 0.000 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
   <animation>
-    <type>translate</type>
+    <name>LesCables1</name>
     <object-name>cableprofG1</object-name>
     <object-name>cableprofD1</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>LesCables1</object-name>
     <property>/controls/flight/elevator</property>
     <factor>-0.0551</factor>
     <center>
@@ -352,16 +397,15 @@
       <z-m>  0.647 </z-m>
     </center>
     <axis>
-      <x> 1.000 </x>
-      <y> 0.000 </y>
-      <z> 0.000 </z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
   <animation>
     <type>translate</type>
-    <object-name>cableprofG1</object-name>
-    <object-name>cableprofD1</object-name>
+    <object-name>LesCables1</object-name>
     <property>/controls/flight/elevator</property>
     <factor>-0.0209</factor>
     <center>
@@ -370,16 +414,15 @@
       <z-m>  0.647 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 0.000 </y>
-      <z> 1.000 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
 
   <animation>
     <type>rotate</type>
-    <object-name>cableprofG1</object-name>
-    <object-name>cableprofD1</object-name>
+    <object-name>LesCables1</object-name>
     <property>/controls/flight/elevator</property>
     <factor>0.32</factor>
     <center>
@@ -388,31 +431,27 @@
       <z-m>  0.647 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 1.000 </y>
-      <z> 0.000 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
   <!-- Animations des ailerons -->
   <animation>
-    <type>rotate</type>
+    <name>AileronGauche</name>
     <object-name>aileronG</object-name>
     <object-name>aileronG2</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>AileronGauche</object-name>
     <property>surface-positions/left-aileron-pos-norm</property>
     <interpolation>
-      <entry>
-        <ind>  1.0 </ind>
-        <dep> 15.0 </dep>
-      </entry>
-      <entry>
-        <ind> 0.000 </ind>
-        <dep> 0.000 </dep>
-      </entry>
-      <entry>
-        <ind> -1.000 </ind>
-        <dep>  0.000 </dep>
-      </entry>
+      <entry><ind>  1 </ind><dep> 15 </dep></entry>
+      <entry><ind>  0 </ind><dep>  0 </dep></entry>
+      <entry><ind> -1 </ind><dep>  0 </dep></entry>
     </interpolation>
     <center>
       <x-m> -0.751 </x-m>
@@ -420,30 +459,26 @@
       <z-m>  1.289 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 1.000 </y>
-      <z> 0.000 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation> 
 
   <animation>
-    <type>rotate</type>
+    <name>AileronDroit</name>
     <object-name>aileronD</object-name>
     <object-name>aileronD2</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>AileronDroit</object-name>
     <property>surface-positions/right-aileron-pos-norm</property>
     <interpolation>
-      <entry>
-        <ind>  1.0 </ind>
-        <dep> 15.0 </dep>
-      </entry>
-      <entry>
-        <ind> 0.000 </ind>
-        <dep> 0.000 </dep>
-      </entry>
-      <entry>
-        <ind> -1.000 </ind>
-        <dep>  0.000 </dep>
-      </entry>
+      <entry><ind>  1 </ind><dep> 15 </dep></entry>
+      <entry><ind>  0 </ind><dep>  0 </dep></entry>
+      <entry><ind> -1 </ind><dep>  0 </dep></entry>
     </interpolation>
     <center>
       <x-m> -0.751 </x-m>
@@ -451,9 +486,9 @@
       <z-m>  1.289 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 1.000 </y>
-      <z> 0.000 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -469,17 +504,15 @@
       <z-m> -1.569 </z-m>
     </center>
     <axis>
-      <x>  0.000 </x>
-      <y> -1.000 </y>
-      <z>  0.000 </z>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
     </axis>
   </animation>
 
   <animation>
     <type>spin</type>
     <object-name>roueD</object-name>
-    <object-name>essieuD</object-name>
-    <object-name>disqueD</object-name>
     <property>gear/gear[1]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
@@ -488,9 +521,9 @@
       <z-m> -1.569 </z-m>
     </center>
     <axis>
-      <x>  0.000 </x>
-      <y> -1.000 </y>
-      <z>  0.000 </z>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
     </axis>
   </animation>
 
