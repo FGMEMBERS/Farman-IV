@@ -1,47 +1,44 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
   <path>farman-IV.ac</path>
 
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/Farman-IV/Models/Liveries", 10);
+    </load>
+
+    <unload>
+      livery_update.stop();
+    </unload>
+  </nasal>
+
   <animation>
     <!-- Objets opaques -->
     <object-name>structure</object-name>
-    <object-name>roueG</object-name>
-    <object-name>roueD</object-name>
     <object-name>profondeur</object-name>
     <object-name>profondeur2</object-name>
     <object-name>profondeur3</object-name>
-    <object-name>axeprof</object-name>
     <object-name>ailes</object-name>
     <object-name>aileronG</object-name>
     <object-name>aileronD</object-name>
-    <object-name>pilote</object-name>
-    <object-name>helice</object-name>
     <object-name>directionG</object-name>
     <object-name>directionD</object-name>
-    <object-name>moteur</object-name>
     <object-name>freins</object-name>
-
-    <object-name>casquette</object-name>
-    <object-name>tete</object-name>
-    <object-name>corps</object-name>
-    <object-name>brasG</object-name>
-    <object-name>brasD</object-name>
-    <object-name>avantbrasG</object-name>
-    <object-name>avantbrasD</object-name>
-    <object-name>cuisseG</object-name>
-    <object-name>cuisseD</object-name>
-    <object-name>jambeG</object-name>
-    <object-name>jambeD</object-name>
-    <object-name>piedG</object-name>
-    <object-name>piedD</object-name>
+    <object-name>reservoir1</object-name>
+    <object-name>reservoir2</object-name>
+    <object-name>porteroues</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>axeprof</object-name>
+    <object-name>helice</object-name>
 
     <!-- Objets transparents -->
+    <object-name>ailes2</object-name>
     <object-name>profondeur4</object-name>
     <object-name>profondeur5</object-name>
     <object-name>profondeur6</object-name>
-    <object-name>ailes2</object-name>
     <object-name>aileronG2</object-name>
     <object-name>aileronD2</object-name>
     <object-name>directionG2</object-name>
@@ -50,15 +47,77 @@
     <object-name>cableprofA</object-name>
     <object-name>cableprof</object-name>
     <object-name>cableprofG1</object-name>
-    <object-name>cableprofG2</object-name>
     <object-name>cableprofD1</object-name>
+    <object-name>cableprofG2</object-name>
     <object-name>cableprofD2</object-name>
     <object-name>cabledirG</object-name>
     <object-name>cabledirD</object-name>
     <object-name>cabledirG1</object-name>
     <object-name>cabledirD1</object-name>
+
     <object-name>propdisc</object-name>
     <object-name>propblur</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>structure</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>profondeur2</object-name>
+    <object-name>profondeur3</object-name>
+    <object-name>ailes</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>directionG</object-name>
+    <object-name>directionD</object-name>
+    <object-name>freins</object-name>
+    <object-name>reservoir1</object-name>
+    <object-name>reservoir2</object-name>
+    <object-name>porteroues</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>axeprof</object-name>
+    <object-name>helice</object-name>
+    
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture.png</texture>
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+    <emission>
+      <red-prop>emission/red</red-prop>
+      <green-prop>emission/green</green-prop>
+      <blue-prop>emission/blue</blue-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>ailes2</object-name>
+    <object-name>profondeur4</object-name>
+    <object-name>profondeur5</object-name>
+    <object-name>profondeur6</object-name>
+    <object-name>aileronG2</object-name>
+    <object-name>aileronD2</object-name>
+    <object-name>directionG2</object-name>
+    <object-name>directionD2</object-name>
+    
+    <property-base>sim/model/livery-t</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture-t.png</texture>
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+    <emission>
+      <red-prop>emission/red</red-prop>
+      <green-prop>emission/green</green-prop>
+      <blue-prop>emission/blue</blue-prop>
+    </emission>
   </animation>
 
   <animation>
@@ -74,6 +133,58 @@
       <x-m> -2.334 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -0.098 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Moteurs -->
+  <model>
+    <path>Aircraft/Farman-IV/Models/Engine/engine.xml</path>
+    <offsets>
+      <x-m> -0.25766 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.17632 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Cranking effects -->
+  <!-- Left -->
+  <model>
+    <path>Aircraft/Farman-IV/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -0.25766 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.17632 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Effets sur le sol -->
+  <!-- Roue gauche -->
+  <model>
+    <path>Aircraft/Farman-IV/Models/Effects/ground/ground0.xml</path>
+    <offsets>
+      <x-m> -2.15209 </x-m>
+      <y-m> -2.14526 </y-m>
+      <z-m> -1.90393 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Roue droite -->
+  <model>
+    <path>Aircraft/Farman-IV/Models/Effects/ground/ground1.xml</path>
+    <offsets>
+      <x-m> -2.15209 </x-m>
+      <y-m>  2.14526 </y-m>
+      <z-m> -1.90393 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Patte arrière -->
+  <model>
+    <path>Aircraft/Farman-IV/Models/Effects/ground/ground2.xml</path>   
+    <offsets>
+      <x-m>  3.66421 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -1.05186 </z-m>
     </offsets>
   </model>
 
@@ -167,8 +278,8 @@
   <animation>
     <type>rotate</type>
     <object-name>DirectionGauche</object-name>
-    <property>controls/flight/rudder</property>
-    <factor>20</factor>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> 20 </factor>
     <center>
       <x-m>  5.136 </x-m>
       <y-m> -1.923 </y-m>
@@ -184,8 +295,8 @@
   <animation>
     <type>translate</type>
     <object-name>cabledirG1</object-name>
-    <property>controls/flight/rudder</property>
-    <factor>0.15</factor>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> 0.15 </factor>
     <center>
       <x-m>  3.680 </x-m>
       <y-m> -2.200 </y-m>
@@ -201,8 +312,8 @@
   <animation>
     <type>rotate</type>
     <object-name>cabledirG1</object-name>
-    <property>controls/flight/rudder</property>
-    <factor>1.11</factor>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> 1.11 </factor>
     <center>
       <x-m>  3.680 </x-m>
       <y-m> -2.200 </y-m>
@@ -225,8 +336,8 @@
   <animation>
     <type>rotate</type>
     <object-name>DirectionDroite</object-name>
-    <property>controls/flight/rudder</property>
-    <factor>20</factor>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> 20 </factor>
     <center>
       <x-m> 5.136 </x-m>
       <y-m> 1.923 </y-m>
@@ -242,8 +353,8 @@
   <animation>
     <type>translate</type>
     <object-name>cabledirD1</object-name>
-    <property>controls/flight/rudder</property>
-    <factor>-0.15</factor>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> -0.15 </factor>
     <center>
       <x-m>  3.680 </x-m>
       <y-m>  2.200 </y-m>
@@ -259,7 +370,7 @@
   <animation>
     <type>rotate</type>
     <object-name>cabledirD1</object-name>
-    <property>controls/flight/rudder</property>
+    <property>surface-positions/rudder-pos-norm</property>
     <factor>1.11</factor>
     <center>
       <x-m>  3.680 </x-m>
@@ -285,8 +396,8 @@
   <animation>
     <type>rotate</type>
     <object-name>Profondeur1</object-name>
-    <property>/controls/flight/elevator</property>
-    <factor>11</factor>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor> 11 </factor>
     <center>
       <x-m> -5.493 </x-m>
       <y-m>  0.000 </y-m>
@@ -309,8 +420,8 @@
   <animation>
     <type>rotate</type>
     <object-name>Profondeur2</object-name>
-    <property>/controls/flight/elevator</property>
-    <factor>11</factor>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor> 11 </factor>
     <center>
       <x-m> 5.085 </x-m>
       <y-m> 0.000 </y-m>
@@ -332,8 +443,8 @@
   <animation>
     <type>translate</type>
     <object-name>LesCables2</object-name>
-    <property>/controls/flight/elevator</property>
-    <factor>0.0585</factor>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor> 0.0585 </factor>
     <center>
       <x-m> -0.099 </x-m>
       <y-m>  0.000 </y-m>
@@ -349,8 +460,8 @@
   <animation>
     <type>translate</type>
     <object-name>LesCables2</object-name>
-    <property>/controls/flight/elevator</property>
-    <factor>-0.0097</factor>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor> -0.0097 </factor>
     <center>
       <x-m> -0.099 </x-m>
       <y-m>  0.000 </y-m>
@@ -366,8 +477,8 @@
   <animation>
     <type>rotate</type>
     <object-name>LesCables2</object-name>
-    <property>/controls/flight/elevator</property>
-    <factor>0.35</factor>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor> 0.35 </factor>
     <center>
       <x-m> -0.099 </x-m>
       <y-m>  0.000 </y-m>
@@ -389,8 +500,8 @@
   <animation>
     <type>translate</type>
     <object-name>LesCables1</object-name>
-    <property>/controls/flight/elevator</property>
-    <factor>-0.0551</factor>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor> -0.0551 </factor>
     <center>
       <x-m> -0.103 </x-m>
       <y-m>  0.000 </y-m>
@@ -406,8 +517,8 @@
   <animation>
     <type>translate</type>
     <object-name>LesCables1</object-name>
-    <property>/controls/flight/elevator</property>
-    <factor>-0.0209</factor>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor> -0.0209 </factor>
     <center>
       <x-m> -0.103 </x-m>
       <y-m>  0.000 </y-m>
@@ -423,8 +534,8 @@
   <animation>
     <type>rotate</type>
     <object-name>LesCables1</object-name>
-    <property>/controls/flight/elevator</property>
-    <factor>0.32</factor>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor> 0.32 </factor>
     <center>
       <x-m> -0.103 </x-m>
       <y-m>  0.000 </y-m>
